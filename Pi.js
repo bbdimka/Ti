@@ -1,8 +1,14 @@
+[General]
+name = YouTube Premium Emulator
+author = Your Name
+version = 1.0
+description = Эмулирует YouTube Premium, убирая рекламу и добавляя заголовки.
+enabled = true
+
+[Script]
 function request(flow) {
-    // Логируем начало обработки запроса
     console.log("[YouTube Premium Emulator] Перехвачен запрос:", flow.request.url);
 
-    // Проверяем, относится ли запрос к YouTube
     if (flow.request.host.includes("youtube.com") || flow.request.host.includes("googlevideo.com")) {
         console.log("[YouTube Premium Emulator] Запрос к YouTube обнаружен.");
 
@@ -16,10 +22,8 @@ function request(flow) {
 }
 
 function response(flow) {
-    // Логируем начало обработки ответа
     console.log("[YouTube Premium Emulator] Перехвачен ответ:", flow.request.url);
 
-    // Проверяем, относится ли ответ к YouTube
     if (flow.request.host.includes("youtube.com") || flow.request.host.includes("googlevideo.com")) {
         console.log("[YouTube Premium Emulator] Ответ от YouTube обнаружен.");
 
